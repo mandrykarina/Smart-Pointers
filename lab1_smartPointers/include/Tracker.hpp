@@ -4,8 +4,8 @@
 class Tracker
 {
 public:
-    static int alive;
-    int id;
+    static int alive; // общий счётчик всех "живых" объектов Tracker
+    int id;           // уникальный номер для каждого объекта
 
     Tracker()
     {
@@ -24,3 +24,5 @@ public:
         // std::cout << "[Tracker " << id << "] работает." << std::endl;
     }
 };
+
+int Tracker::alive = 0;

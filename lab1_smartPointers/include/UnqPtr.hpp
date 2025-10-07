@@ -28,7 +28,12 @@ public:
     // --- 3. Деструктор ---
     ~UnqPtr()
     {
-        delete ptr_; // освобождает память, если объект есть
+        if (ptr_)
+        {
+            std::cout << "[UnqPtr] deleting object at " << ptr_ << std::endl;
+            delete ptr_;
+            ptr_ = nullptr;
+        }
     }
 
     // --- 4. Копирование запрещено ---
